@@ -1,0 +1,73 @@
+{% extends "material/base.html " %}
+	{% block content %}
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">QIQS</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Home</a></li>
+        <li><a href="badges.html">Predict</a></li>
+        <li><a href="collapsible.html">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h3 class="red-text text-darken-2 center-align">Testing Phase</h3>
+   <div class="container">
+      <div class="row">
+          <form class="col s12" action="/predict" method="POST">
+              <div class="input-field col s12">
+                <textarea id="question_text" name="question_text" class="materialize-textarea validate" required>
+                </textarea>
+                <label for="question_text">Enter your Question</label>
+              </div>
+              <div>
+               <p>
+               		<label for="Algorithm">Select Algorithm</label>
+               		<br><br>
+  					<input class="with-gap" name="group1" type="radio" id="log"/>
+ 				    <label for="log">Logistic Regression</label>
+ 				    <br>
+ 				    <br>
+ 				    <input class="with-gap" name="group1" type="radio" id="nb" checked />
+ 				    <label for="nb">Naive Bayes</label>
+ 				    <br>
+ 				    <br>
+ 				    <input class="with-gap" name="group1" type="radio" id="svm" />
+ 				    <label for="svm">SVM</label>
+ 				    <br>
+ 				    <br>
+				</p>
+			</div>
+			<div>
+               <p>
+               		<label for="Text Vectorizer">Select Text Vectorizer</label>
+               		<br>
+               		<br>
+  					<input class="with-gap" name="group2" type="radio" id="bow"/>
+ 				    <label for="bow">BagOfWords</label>
+ 				    <br>
+ 				    <br>
+ 				    <input class="with-gap" name="group2" type="radio" id="tfidf" checked />
+ 				    <label for="tfidf">TFIDF</label>
+ 				    <br>
+ 				    <br>
+				</p>
+			</div>
+             <button class="waves-effect waves-light btn-large blue" type="submit" name="action">Submit</button>
+          </form>
+        </div>
+        <br>
+        <br>
+        <a class="waves-effect waves-light btn-large blue" href="{{url_for('read_dataset')}}">View Dataset</a>
+        <br>
+        <br>
+        <a class="waves-effect waves-light btn-large blue" href="/compare">Compare</a>
+       </div>
+	{% endblock %}
+
+	{% block scripts %}
+	{{ super() }}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	{% endblock %}

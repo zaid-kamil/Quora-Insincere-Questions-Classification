@@ -1,0 +1,45 @@
+{% extends "material/base.html" %}
+	{% block content %}
+		<nav>
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo">Quora</a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="{{url_for('index')}}">Home</a></li>
+	        <li><a href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+	        <li><a href="{{url_for('model_info')}}">Features</a></li>
+	        <li><a href="/compare">Compare</a></li>
+	        <li><a href="{{url_for('help')}}">Help</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+	<h3 class="center-align">Dataset</h3>
+	<p align="center">This is the sample dataset which is shown below.To Obtain Full Information about the dataset <a href="https://www.kaggle.com/c/quora-insincere-questions-classification/data">Click here</a>
+	</p>
+	<div class="container">
+		{{data_view.to_html(classes="table striped",na_rep="-") | safe}}
+	</div>
+	 <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Quora Insincere Questions Classification</h5>
+                <p class="grey-text text-lighten-4">QIQS is a ML web App to test the sincerity of a valid Quora Question.One can validate whether the given question is Sincere or Insincere based on the policies and terms and Conditions of the Quora.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('index')}}">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('help')}}">Help</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('predict_2')}}">Compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Aniket Rajani
+            </div>
+          </div>
+        </footer>
+	{% endblock %}

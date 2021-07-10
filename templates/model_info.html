@@ -1,0 +1,59 @@
+{% extends "material/base.html " %}
+	{% block content %}
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Quora</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+        <li><a href="{{url_for('model_info')}}">Features</a></li>
+        <li><a href="/compare">Compare</a></li>
+        <li><a href="{{url_for('help')}}">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+  <h2 class="center-align">Model Information</h2>
+  <p>Algorithms used while Building the Model are:<br>
+    <ol type="1">
+      <li><b>Naive Bayes</b></li>
+      <li><b>Logistic Regression</b></li>
+      <li><b>Support Vector Machine</b></li>
+    </ol>
+  </p>
+  <h4>Features</h4>
+  <ol type="1">
+    <li><b>Length</b> : It is an Integer Value representing the Length of a Question </li><br>
+    <li><b>Total Words</b>: It is an Integer Value Representing the Count of Total Words in the Question</li><br>
+    <li><b>Total StopWords</b>: It is an Integer Value Representing the Count of Total StopWords in the Question.StopWords are commonly used words such as "the","is" "an" etc. </li><br>
+    <li><b>Uppercase Count</b>: It is an Integer Value Representing the Count of UpperCase letters in the Question</li><br>
+    <li><b>BadWords Count</b>: It is an Integer Value Representing the Count of Total Toxic or Bad Words in the Question.</li><br>
+    <li><b>BadWords Ratio</b>: It is a Float Value Representing the Ratio of bad Words to Total Words in the Question</li><br>
+    <li><b>Punctuations Count</b>: It is an Integer Value Representing the Count of Total Punctuation Characters in the Question</li><br>
+    <li><b>Unique Words Count</b>: It is an Integer Value Representing the Count of Total Unique Words in the Question</li><br>
+    <li><b>Unique Words Ratio</b>: It is a Float Value Representing the ratio of Unique Words to Total Words in the Question</li><br>
+  </ol>  
+  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Quora Insincere Questions Classification</h5>
+                <p class="grey-text text-lighten-4">QIQS is a ML web App to test the sincerity of a valid Quora Question.One can validate whether the given question is Sincere or Insincere based on the policies and terms and conditions of the Quora.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('index')}}">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('help')}}">Help</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('predict_2')}}">Compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Aniket Rajani
+            </div>
+          </div>
+        </footer>
+  {% endblock %}

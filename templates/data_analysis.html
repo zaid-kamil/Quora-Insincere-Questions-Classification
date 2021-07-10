@@ -1,0 +1,68 @@
+{% extends "material/base.html " %}
+	{% block content %}
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Quora</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+        <li><a href="{{url_for('model_info')}}">Features</a></li>
+        <li><a href="/compare">Compare</a></li>
+        <li><a href="{{url_for('help')}}">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+  <h2 class="center-align">Data Analysis</h3>
+  <div>
+  	<img src="{{url_for('static', filename='bar_graph.jpg')}}" alt="Naive Bayes Formula" width="400" height="260" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
+  <br>
+  	<ul>
+  	<li class="center-align">Number of sincere questions are much more in number as compared to insincere questions</li>
+
+	</ul>
+</div>
+<div>
+	<img src="{{url_for('static', filename='box_plot.png')}}" alt="Naive Bayes Formula" width="400" height="260" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
+  <ul>
+  <li class="center-align">There are some insincere questions having more length as compared to sincere questions</li> 
+  <li class="center-align">Length can be considered a good feature here as the box plots for both the classes are not completly overlapping.There is some variation seen.But it is important to note Length cannot explained the insincerity of the question</li>
+</ul>
+</div>
+<h4 class="center-align">WordCloud for Insincere Questions</h4>
+<div>
+	<img src="{{url_for('static', filename='word_cloud.png')}}" alt="Naive Bayes Formula" width="601" height="599" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
+  <ul>
+  <li class="center-align">From the WordCloud the words like Muslim,racist,american,Donald Trump,Indian,Pakistan,Gay,Christian and sex seems to be the most important words for declaring a question as an insincere question,Because if the question consists of any of these words than there is high probability of a question being insincere</li> 
+</ul>
+</div>
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Quora Insincere Questions Classification</h5>
+                <p class="grey-text text-lighten-4">QIQS is a ML web App to test the sincerity of a valid Quora Question.One can validate whether the given question is Sincere or Insincere based on the policies and terms and conditions of the Quora.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('index')}}">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('help')}}">Help</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('predict_2')}}">Compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Aniket Rajani
+            </div>
+          </div>
+        </footer>
+{% endblock %}

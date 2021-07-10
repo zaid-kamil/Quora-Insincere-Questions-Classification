@@ -1,0 +1,84 @@
+{% extends "material/base.html " %}
+	{% block content %}
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Quora</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+        <li><a href="{{url_for('model_info')}}">Features</a></li>
+        <li><a href="/compare">Compare</a></li>
+        <li><a href="{{url_for('help')}}">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h3 class="red-text text-darken-2 center-align">Comparison</h3>
+   <div class="container">
+      <div class="row">
+          <form class="col s12" action="/predict_2" method="POST">
+              <div class="input-field col s12">
+                <textarea id="question_text" name="question_text" class="materialize-textarea validate" required>
+                </textarea>
+                <label for="question_text">Enter your Question</label>
+              </div>
+              <div>
+               <p>
+               		<label for="Algorithm">Select Algorithm</label>
+               		<br><br>
+  					<input class="with-gap" name="group1" type="radio" value="Logistic Regression" id="log"/>
+ 				    <label for="log">Logistic Regression</label>
+ 				    <br>
+ 				    <br>
+ 				    <input class="with-gap" name="group1" type="radio" value="Naive Bayes" id="nb" checked />
+ 				    <label for="nb">Naive Bayes</label>
+ 				    <br>
+ 				    <br>
+ 				    <input class="with-gap" name="group1" type="radio" value="SVM" id="svm" />
+ 				    <label for="svm">SVM</label>
+ 				    <br>
+ 				    <br>
+				</p>
+			</div>
+			<label>Select Text Vectorizer</label>
+			<br>
+			<br>
+			<div>
+  				<input checked type="checkbox" id="check"  name="BagOfWords">
+  				<label for="check">BagOfWords</label>
+			</div>
+    		<br>
+    		<div>
+  				<input type="checkbox" id="check1" name="TFIDF">
+  				<label for="check1">TFIDF</label>
+			</div>
+			<br>
+			<button class="waves-effect waves-light btn-large blue" type="submit" name="action">Submit</button>
+		</form>
+	</div>
+</div>
+		 <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Quora Insincere Questions Classification</h5>
+                <p class="grey-text text-lighten-4">QIQS is a ML web App to test the sincerity of a valid Quora Question.One can validate whether the given question is Sincere or Insincere based on the policies and terms and Conditions of the Quora.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('index')}}">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('help')}}">Help</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('predict_2')}}">Compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Aniket Rajani
+            </div>
+          </div>
+        </footer>
+		  {% endblock %}

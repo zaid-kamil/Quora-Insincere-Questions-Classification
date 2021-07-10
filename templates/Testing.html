@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Testing</title>
+	<style type="text/css">
+		.loginBtn{
+			background: #9053c7;
+  			background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  			background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+  			background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+  			background: linear-gradient(-135deg, #c850c0, #4158d0);
+		}
+		.transperent{
+			background: #9053c7;
+  			background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  			background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+  			background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+  			background: linear-gradient(-135deg, #c850c0, #4158d0);
+  			box-shadow: 0px 0px;
+  			text-shadow: 0px 0px;
+  			webkit-box-shadow: 0px 0px;
+		}
+		.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #EA80FC;
+  text-shadow: 10px;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// body...
+			$('#selectAlgo').change(function () {
+				// body...
+				var selectOpion = $('#selectAlgo option:selected')
+			})
+		}) 
+	</script>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="topnav transperent" style="margin: 0">
+      					<ul id="nav-mobile" class="" style="padding: 0px">
+      						<li><a href="#">Quora</a></li>
+        					<li><a href="home.html">Home</a></li>
+        					<li><a href="Testing.html">Testing</a></li>
+        					<li><a href="about.html">About</a></li>
+      					</ul>
+    				</div>
+  				</div>
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img02.png" alt="IMG">
+				
+					</div>
+
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Testing
+					</span>
+
+					
+					<div class="wrap-input100 validate-input"  data-validate="Enter the Question">
+						<!--<input class="input101" type="text" name="Question_text" placeholder="Enter the Question">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+
+							<i class="fa fa-edit" aria-hidden="true"></i>
+						</span>-->
+						<textarea  class="input101" type="text" name="Question_text" cols="40" rows="5" placeholder="Enter your Question here......"></textarea>
+
+
+					</div>
+
+					<div class="dropdown" style="margin-bottom: 10px" >
+    					<button class="dropdown-toggle input100" type="button" data-toggle="dropdown">
+    					<span class="focus-input100"></span>
+    					<select id="selectAlgo">
+
+    						<option>Select Machine Learning Algorithm</option>
+							<option value="NB">Naive Bayes</option>
+							<option value="SVM">Support vector machine</option>
+							<option value="LR">Logistic Regression</option>
+		
+						</select>
+
+
+
+    					</button>
+    					<span class="symbol-input100">
+							<i class="fa fa-edit" aria-hidden="true"></i>
+						</span>
+    					<!--<ul class="dropdown-menu">
+      					<li><a href="#">Naive Bayes</a></li>
+      					<li><a href="#">Logistic regression</a></li>
+      					<li><a href="#">Support Vector Machine</a></li>
+    					</ul> -->
+
+    					
+
+  					</div>
+
+
+
+  					<div class="dropdown" style="margin-bottom: 10px" >
+    					<button class="dropdown-toggle input100" type="button"  data-toggle="dropdown">Select Hyperparameter
+    					<span class="focus-input100"></span>
+    					<select id="selectAlgo">
+
+							<option value="NB">0.01</option>
+							<option value="SVM">0.001</option>
+							<option value="LR">1</option>
+		
+						</select>
+
+
+
+    					</button>
+    					<span class="symbol-input100">
+							<i class="fa fa-edit" aria-hidden="true"></i>
+						</span>
+    					<!--<ul class="dropdown-menu">
+      					<li><a href="#">Naive Bayes</a></li>
+      					<li><a href="#">Logistic regression</a></li>
+      					<li><a href="#">Support Vector Machine</a></li>
+    					</ul> -->
+
+    					
+
+  					</div>
+
+
+  					<!--<div class="custom-control custom-radio">
+    			    <input type="radio" class="custom-control-input" id="customRadio" name="e1">
+      				<label class="custom-control-label" for="customRadio">Naive Bayes</label>
+    				</div>    
+
+
+  					<div class="custom-control custom-radio">
+    			    <input type="radio" class="custom-control-input" id="customRadio" name="e2">
+      				<label class="custom-control-label" for="customRadio">Logistic Regression</label>
+    				</div>
+
+
+  					<div class="custom-control custom-radio">
+    			    <input type="radio" class="custom-control-input" id="customRadio" name="e3">
+      				<label class="custom-control-label" for="customRadio">Support Vector Machine</label>
+    				</div>
+
+    				<input type="radio" id="defaultRadio" name="example2">
+    				<label for="defaultRadio">Naive Bayes</label>
+    
+
+    				<input type="radio" id="defaultRadio" name="example3">
+    				<label for="defaultRadio">Logistic Regression</label>
+
+
+    				<input type="radio" id="defaultRadio" name="example4">
+    				<label for="defaultRadio">Support Vector Machine</label>-->
+    
+
+                     
+
+
+  					<div class="wrap-input100 validate-input" data-validate="Enter type of text vectorization">
+						<input class="input100" type="text" name="text_type" placeholder="Enter the type of text vectorization">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-edit" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" style="background: #9053c7;">
+							Test
+						</button>
+					</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

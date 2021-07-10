@@ -1,0 +1,41 @@
+{% extends "material/base.html " %}
+	{% block content %}
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Quora</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+        <li><a href="{{url_for('model_info')}}">Features</a></li>
+        <li><a href="/compare">Compare</a></li>
+        <li><a href="{{url_for('help')}}">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+	<h3 align="center">Class Prediction</h3>
+	<br>
+	<p align="center">Total of 9 features were used while comparing the Models,To get more information about each feature <a href="{{url_for('model_info')}}">Click here</a>.The Values associated with the Words entered in the Question Represent the TFIDF Values for each of the Word.To know more about TFIDF 
+		<a href="{{url_for('help')}}">Click here</a>
+	</p>
+	<br><br>
+			<table order = 1 style="width:50%; float:left"> 
+				{% for key, value in result.items() %} 
+				
+					<tr> 
+					<th> {{ key }} </th> 
+					<td> {{ value }} </td> 
+					</tr> 
+					
+				{% endfor %} 
+			</table> 
+			<table  order = 1 style="width:40%; float:right"> 
+				{% for key, value in result1.items() %} 
+				
+					<tr> 
+					<th> {{ key }} </th> 
+					<td> {{ value }} </td> 
+					</tr> 
+					
+				{% endfor %} 
+			</table> 
+			{% endblock %}

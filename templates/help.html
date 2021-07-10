@@ -1,0 +1,127 @@
+{% extends "material/base.html " %}
+	{% block content %}
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Quora</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+        <li><a href="{{url_for('model_info')}}">Features</a></li>
+        <li><a href="/compare">Compare</a></li>
+        <li><a href="{{url_for('help')}}">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+     <h3 class="center align">Naive Bayes Classifier</h3>
+    <p class="center align">It is a classification technique based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature.<br>
+
+For example, a fruit may be considered to be an apple if it is red, round, and about 3 inches in diameter. Even if these features depend on each other or upon the existence of the other features, all of these properties independently contribute to the probability that this fruit is an apple and that is why it is known as ‘Naive’.<br>
+
+Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.<br>
+
+Bayes theorem provides a way of calculating posterior probability P(c|x) from P(c), P(x) and P(x|c). Look at the equation below:</p>
+<br>
+<p>Some important parameters for Naive Bayes Algorithm are:<br>
+  <ol type="1">
+    <li> <b>Alpha</b> : Additive (Laplace/Lidstone) smoothing parameter (0 for no smoothing)</li>
+    <li><b>Fit_prior</b> : It is a boolean value Whether to learn class prior probabilities or not. If false, a uniform prior will be used. </li>
+  </ol>
+</p>
+</div>
+
+  <div>
+    <img src="{{url_for('static', filename='bayes.png')}}" alt="Naive Bayes Formula" width="340" height="210" hspace="200">
+    <iframe width="340" height="210" src="https://www.youtube.com/embed/vz_xuxYS2PM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div>
+  <h3 class="center align">Logistic Regression</h3>
+  <p class="center align">Logistic Regression is a classification algorithm. It is used to predict a binary outcome (1 / 0, Yes / No, True / False) given a set of independent variables. To represent binary/categorical outcome, we use dummy variables. You can also think of logistic regression as a special case of linear regression when the outcome variable is categorical, where we are using log of odds as dependent variable. In simple words, it predicts the probability of occurrence of an event by fitting data to a logit function.<br><br>
+    TASK IN LOGISTIC REGRESSION IS : To find W and b to discover a plane such that it separates positive and negative point i.e we have to find (𝜋).
+Here, in above image_1 we can find out the distance from any point to plane Pi(𝜋). Also we assumed W is a unit vector and normal to plane.
+So now comes to interesting part via seeing diagram in below picture i.e if we calculate:
+1⇒ Distance from positive point to plane (𝜋) it will be positive , i.e di=W(transpose) Xi>0 because (W and Xi are on same side).<br>
+  </p>
+  <p>Some important parameters for Logistic Regression Algorithm are:<br>
+  <ol type="1">
+    <li> <b>Alpha</b> :It is a Float Constant that multiplies the regularization term. Defaults to 0.0001 Also used to compute learning_rate when set to ‘optimal’.</li>
+    <li> <b>learning_rate </b> :It is the amount that weightds are updated during training.</li>
+    <li><b>Penalty</b>:The penalty (aka regularization term) to be used. Defaults to ‘l2’ which is the standard regularizer for linear SVM models. ‘l1’ and ‘elasticnet’ might bring sparsity to the model (feature selection) not achievable with ‘l2’.</li>
+    <li><b>Fit_prior</b> : It is a boolean value Whether to learn class prior probabilities or not. If false, a uniform prior will be used. </li>
+  </ol>
+</p>
+  <div>
+   <img src="{{url_for('static', filename='sigmoid_better.png')}}" alt="Naive Bayes Formula" width="400" height="260" hspace="200">
+   <iframe width="400" height="260" src="https://www.youtube.com/embed/VCJdg7YBbAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <br>
+   <img src="{{url_for('static', filename='sigmoid_dance.png')}}" alt="Naive Bayes Formula" width="400" height="260" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
+   </div>
+   <br>
+   <br>
+   <div>
+     <h3 class="center align">Support Vector Machines</h3>
+     <p class="center align">A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples. In two dimentional space this hyperplane is a line dividing a plane in two parts where in each class lay in either side.<br><br>
+      Support Vector Machine” (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges. However,  it is mostly used in classification problems. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have) with the value of each feature being the value of a particular coordinate
+    </p>
+    <p>Some important parameters for SVM Algorithm are:<br>
+  <ol type="1">
+    <li> <b>Alpha</b> :It is a Float Constant that multiplies the regularization term. Defaults to 0.0001 Also used to compute learning_rate when set to ‘optimal’.</li>
+    <li> <b>learning_rate </b> :It is the amount that weightds are updated during training.</li>
+    <li><b>Penalty</b>:The penalty (aka regularization term) to be used. Defaults to ‘l2’ which is the standard regularizer for linear SVM models. ‘l1’ and ‘elasticnet’ might bring sparsity to the model (feature selection) not achievable with ‘l2’.</li>
+    <li><b>Fit_prior</b> : It is a boolean value Whether to learn class prior probabilities or not. If false, a uniform prior will be used. </li>
+    <li><b>kernel</b> : Specifies the kernel type to be used in the algorithm. It must be one of ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’ or a callable. If none is given, ‘rbf’ will be used. If a callable is given it is used to pre-compute the kernel matrix from data matrices; that matrix should be an array of shape </li>
+  </ol>
+</p>
+  </div>
+  <div>
+   <img src="{{url_for('static', filename='SVM_margin.png')}}" alt="Naive Bayes Formula" width="400" height="260" hspace="200">
+  <iframe width="400" height="260" src="https://www.youtube.com/embed/TtKF996oEl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <br>
+   <img src="{{url_for('static', filename='SVM_1.png')}}" alt="Naive Bayes Formula" width="400" height="260" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
+   </div>
+   <div>
+     <h3 class="center align">Term-Frequency and Inverse-Document Frequency(TFIDF)</h3>
+     <p class="center align">TF-IDF stands for term frequency-inverse document frequency, and the tf-idf weight is a weight often used in information retrieval and text mining. This weight is a statistical measure used to evaluate how important a word is to a document in a collection or corpus. The importance increases proportionally to the number of times a word appears in the document but is offset by the frequency of the word in the corpus. Variations of the tf-idf weighting scheme are often used by search engines as a central tool in scoring and ranking a document's relevance given a user query.<br><br>
+     <ol><li>TF: Term Frequency, which measures how frequently a term occurs in a document. Since every document is different in length, it is possible that a term would appear much more times in long documents than shorter ones. Thus, the term frequency is often divided by the document length (aka. the total number of terms in the document) as a way of normalization:
+
+    TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document).</li>
+
+    <li>IDF: Inverse Document Frequency, which measures how important a term is. While computing TF, all terms are considered equally important. However it is known that certain terms, such as "is", "of", and "that", may appear a lot of times but have little importance. Thus we need to weigh down the frequent terms while scale up the rare ones, by computing the following:
+
+    IDF(t) = log_e(Total number of documents / Number of documents with term t in it).</li>
+  </ol>
+    <img src="{{url_for('static', filename='download.png')}}" alt="TFIDF Formula" width="500" height="350" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
+   </div>
+    </p>
+   <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Quora Insincere Questions Classification</h5>
+                <p class="grey-text text-lighten-4">QIQS is a ML web App to test the sincerity of a valid Quora Question.One can validate whether the given question is Sincere or Insincere based on the policies and terms and Conditions of the Quora.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('index')}}">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('data_analyze')}}">Data Analysis</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('help')}}">Help</a></li>
+                  <li><a class="grey-text text-lighten-3" href="{{url_for('predict_2')}}">Compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Aniket Rajani
+            </div>
+          </div>
+        </footer>
+            
+  {% endblock %}

@@ -1,0 +1,76 @@
+h1 {
+
+	text-align: center;
+ 	color: black;
+ 	text-decoration: underline;
+
+}
+label{
+
+	padding-left: 150px;
+    	font-size: 20px;
+}
+
+
+textarea:focus {
+  border: 3px solid #ef5350;
+}
+
+
+textarea {
+    display: block;
+    margin-left: 200px;
+   
+}
+
+input{
+
+	margin-left: 200px;	
+}
+
+
+button {
+  position: center;
+  background-color: #ef5350 ;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+
+a{
+	margin-left: 200px;
+	color: black;
+}
+
+body{
+
+}
